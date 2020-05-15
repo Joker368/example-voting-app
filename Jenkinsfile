@@ -21,9 +21,6 @@ pipeline {
       }
     }
     stage('Push result image') {
-      when {
-        branch 'master'
-      }
       steps {
         withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
           sh 'docker push dockersamples/result'
