@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'ubuntu-1604-aufs-stable'
+      label 'facjenkinsl408'
     }
   }
   stages {
@@ -9,7 +9,7 @@ pipeline {
       steps {
         sh 'docker build -t dockersamples/result ./result'
       }
-    } 
+    }
     stage('Build vote') {
       steps {
         sh 'docker build -t dockersamples/vote ./vote'
