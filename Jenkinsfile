@@ -23,7 +23,7 @@ pipeline {
     stage('Push result image') {
       steps {
         withDockerRegistry(credentialsId: 'jm026829.docker-registry', url:'') {
-          sh 'docker push dockersamples/result'
+          sh 'docker push 12345678900987654321/dockersamples/result'
         }
       }
     }
@@ -33,7 +33,7 @@ pipeline {
       }
       steps {
         withDockerRegistry(credentialsId: 'jm026829.docker-registry', url:'') {
-          sh 'docker push dockersamples/vote'
+          sh 'docker push 12345678900987654321/dockersamples/vote'
         }
       }
     }
@@ -43,7 +43,7 @@ pipeline {
       }
       steps {
         withDockerRegistry(credentialsId: 'jm026829.docker-registry', url:'') {
-          sh 'docker push dockersamples/worker'
+          sh 'docker push 12345678900987654321/dockersamples/worker'
         }
       }
     }
