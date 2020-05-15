@@ -51,6 +51,8 @@ pipeline {
     always {
       steps {
         sh 'docker container prune -f' /* remove stopped containers */
+      }
+      steps {
         sh 'docker image rmi $(docker images --format="{{.Repository}} {{.ID}}" |  grep "12345678900987654321_*" |  cut -d' ' -f2) -f'
       }
     }
