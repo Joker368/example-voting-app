@@ -28,9 +28,6 @@ pipeline {
       }
     }
     stage('Push vote image') {
-      when {
-        branch 'master'
-      }
       steps {
         withDockerRegistry(credentialsId: 'jm026829.docker-registry', url:'') {
           sh 'docker push docker.io/12345678900987654321/dockersamples_vote:latest'
@@ -38,9 +35,6 @@ pipeline {
       }
     }
     stage('Push worker image') {
-      when {
-        branch 'master'
-      }
       steps {
         withDockerRegistry(credentialsId: 'jm026829.docker-registry', url:'') {
           sh 'docker push docker.io/12345678900987654321/dockersamples_worker:latest'
