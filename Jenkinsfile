@@ -7,23 +7,23 @@ pipeline {
   stages {
     stage('Build result') {
       steps {
-        sh 'docker build -t docker.io/12345678900987654321/dockersamples/result ./result'
+        sh 'docker build -t docker.io/12345678900987654321/dockersamples ./result'
       }
     }
     stage('Build vote') {
       steps {
-        sh 'docker build -t docker.io/12345678900987654321/dockersamples/vote ./vote'
+        sh 'docker build -t docker.io/12345678900987654321/dockersamples ./vote'
       }
     }
     stage('Build worker') {
       steps {
-        sh 'docker build -t docker.io/12345678900987654321/dockersamples/worker ./worker'
+        sh 'docker build -t docker.io/12345678900987654321/dockersamples ./worker'
       }
     }
     stage('Push result image') {
       steps {
         withDockerRegistry(credentialsId: 'jm026829.docker-registry', url:'') {
-          sh 'docker push docker.io/12345678900987654321/dockersamples/result:latest'
+          sh 'docker push docker.io/12345678900987654321/dockersamples:latest'
         }
       }
     }
@@ -33,7 +33,7 @@ pipeline {
       }
       steps {
         withDockerRegistry(credentialsId: 'jm026829.docker-registry', url:'') {
-          sh 'docker push docker.io/12345678900987654321/dockersamples/vote:latest'
+          sh 'docker push docker.io/12345678900987654321/dockersamples:latest'
         }
       }
     }
