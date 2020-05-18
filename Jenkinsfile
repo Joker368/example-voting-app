@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'facjenkinsl408'
+      label 'LINUX1'
     }
   }
   stages {
