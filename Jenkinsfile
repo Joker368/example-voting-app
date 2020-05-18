@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    node {
-      label 'LINUX1'
+    dockerfile {
+      label 'LINUX'
     }
   }
   stages {
