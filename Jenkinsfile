@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    dockerfile {
+    node {
       label 'LINUX'
     }
   }
